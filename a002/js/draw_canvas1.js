@@ -16,7 +16,7 @@ function show() {
     .ease(d3.easeQuad)
     .duration(2000);
   var margin = { top: 20, bottom: 20, right: 20, left: 45 },
-    width = 580 - margin.left - margin.right,
+    width = 480 - margin.left - margin.right,
     height = 380 - margin.top - margin.bottom;
   var canvas1 = d3
     .select('#canvas1')
