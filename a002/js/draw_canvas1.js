@@ -66,8 +66,8 @@ function show() {
       .selectAll('stop')
       .data([
         { offset: '0%', color: '#E5F2D7' },
-        { offset: '50%', color: '#EEEEEE88' },
-        { offset: '100%', color: '#F3DBE222' }
+        { offset: '50%', color: '#FEFEFE' },
+        { offset: '100%', color: '#F3EBF2' }
       ])
       .enter()
       .append('stop')
