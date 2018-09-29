@@ -18,13 +18,30 @@
 
         gtag('config', 'UA-126458658-1');
     </script>
+    <style>
+        @media only screen and (min-width: 960px) {
+            .resp {
+                margin: auto;
+                width: 50%;
+            }
+        }
+
+        @media only screen and (max-width: 960px) and (min-width: 600px) {
+            .resp {
+                margin: auto;
+                width: 78%;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Line Chart with D3.js</h1>
-    <h2>Monthly Visits to the Local Museum</h2>
-    <div id="visualization">
-        <svg id="canvas1"></svg>
+    <div class="resp">
+        <h1>Line Chart with D3.js</h1>
+        <h2>Monthly Visits to the Local Museum</h2>
+        <div id="visualization">
+            <svg id="canvas1"></svg>
+        </div>
     </div>
     <script src="../common/js/lib/d3.v4.min.js"></script>
     <script src="js/draw_canvas1.js"></script>
