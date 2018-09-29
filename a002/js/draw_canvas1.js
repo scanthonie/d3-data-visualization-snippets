@@ -179,10 +179,7 @@ function show() {
       .attr('transform', 'translate( 0 ' + yScale(0) + ')')
       .call(bottomAxis);
 
-    bottomAxisChart
-      .selectAll('text')
-      .attr('font-size', '1.5em')
-      .attr('transform', 'translate( 0 0 )');
+    bottomAxisChart.selectAll('text').attr('font-size', '1.5em');
   }
 
   function execMouseTracker(xScale, yScale, data1) {
@@ -206,7 +203,6 @@ function show() {
       .attr('d', verticalPath)
       .attr('class', 'verPath')
       .attr('stroke', 'grey')
-      //.attr('stroke-dasharray', '6,6')
       .attr('stroke-width', '1');
 
     canvas1
