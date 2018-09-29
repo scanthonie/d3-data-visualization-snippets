@@ -1,3 +1,5 @@
-# Code Snippets for Data Visualization with d3.js 
+# Code Snippets for Data Visualization with d3.js
 
-* Documentations to be added.
+- [An Animated Pie Chart](https://scanthonie.github.io/d3-data-visualization-snippets/a001/index.html)
+
+- [Line Chart with Value Indicator](https://scanthonie.github.io/d3-data-visualization-snippets/a002/index.html)
