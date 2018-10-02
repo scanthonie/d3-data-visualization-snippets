@@ -1,0 +1,51 @@
+h1,
+h2,
+h3 {
+  padding-left: 20px;
+}
+
+div.notes {
+  margin-left: auto;
+  margin-right: auto;
+  width: 580px;
+}
+
+div.head {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+div.resp {
+  margin-left: auto;
+  margin-right: auto;
+  width: 580px;
+}
+
+body {
+  background: linear-gradient(
+      135deg,
+      #e7f3ffdd 22px,
+      #e7f3ffdd 22px,
+      #d9ecff 24px,
+      transparent 24px,
+      transparent 67px,
+      #d9ecff 67px,
+      #d9ecff 69px,
+      transparent 69px
+    ),
+    linear-gradient(
+        225deg,
+        #e7f3ffdd 22px,
+        #e7f3ffdd 22px,
+        #d9ecff 24px,
+        transparent 24px,
+        transparent 67px,
+        #d9ecff 67px,
+        #d9ecff 69px,
+        transparent 69px
+      )
+      0 64px;
+  background-color: #e7f3ffdd;
+  background-size: 64px 128px;
+}
