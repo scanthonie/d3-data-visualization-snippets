@@ -9,6 +9,8 @@ function show() {
 
   var n = 600;
 
+  var colorScale = d3.scaleSequential(d3.interpolateRainbow).domain([0, 1]);
+
   var margin = { top: 20, bottom: 20, right: 20, left: 45 },
     width = 580 - margin.left - margin.right,
     height = 3000 - margin.top - margin.bottom;
@@ -72,8 +74,8 @@ function show() {
       .attr('cy', function(d) {
         return d.y;
       })
-      .attr('r', 2.5 + Math.random() * 3)
-      .attr('fill', 'rgb(' + 255 * Math.random() + ',' + 255 * Math.random() + ',' + 255 * Math.random() + ')');
+      .attr('r', 3.5 + Math.random() * 2)
+      .attr('fill', colorScale(Math.random()));
   });
 
   function ticked() {
