@@ -11,9 +11,12 @@ function show() {
 
   var colorScale = d3.scaleSequential(d3.interpolateRainbow).domain([0, 1]);
 
-  var margin = { top: 20, bottom: 20, right: 20, left: 45 },
-    width = 580 - margin.left - margin.right,
-    height = 3000 - margin.top - margin.bottom;
+  var w = window.innerWidth || 580;
+  console.log(w);
+
+  var margin = { top: 20, bottom: 20, right: 0, left: 0 },
+    width = w - margin.left - margin.right,
+    height = 6000 - margin.top - margin.bottom;
 
   var heightWin = window.innerHeight;
 
@@ -21,7 +24,7 @@ function show() {
     return {
       index: i,
       identifier: i.toString(),
-      x: Math.random() * 580,
+      x: Math.random() * w,
       y: Math.random() * heightWin
     };
   });
@@ -36,33 +39,11 @@ function show() {
   var simulation = d3
     .forceSimulation(nodes)
     .velocityDecay(0.75)
-    .alphaDecay(0.001)
-    // .force('charge', d3.forceManyBody().strength(-1))
+    .alphaDecay(0)
     .force('collision', d3.forceCollide(10).strength(1));
 
   simulation.on('tick', ticked);
-  /* function click() {
-    console.log('aaa');
-    nodes.forEach(function(node) {
-      simulation.force(
-        'y' + node.identifier,
-        isolate(d3.forceY(Math.random() * height).strength(0.1), function(d) {
-          return d.identifier == node.identifier;
-        })
-      );
-      simulation.force(
-        'x' + node.identifier,
-        isolate(d3.forceX(Math.random() * width).strength(0.1), function(d) {
-          return d.identifier == node.identifier;
-        })
-      );
-    });
-    simulation.restart();
-  }
 
-  click();
-
-  d3.select('#canvas1').on('click', click); */
   scrollFunc();
   nodes.forEach(function(node) {
     canvas1
