@@ -8,17 +8,13 @@ function show() {
   }
 
   var n = 600;
-
   var colorScale = d3.scaleSequential(d3.interpolateRainbow).domain([0, 1]);
-
   var w = window.innerWidth || 580;
-  console.log(w);
+  var heightWin = window.innerHeight;
 
   var margin = { top: 20, bottom: 20, right: 0, left: 0 },
     width = w - margin.left - margin.right,
     height = 6000 - margin.top - margin.bottom;
-
-  var heightWin = window.innerHeight;
 
   var nodes = d3.range(n).map(function(i) {
     return {
@@ -43,8 +39,17 @@ function show() {
     .force('collision', d3.forceCollide(10).strength(1));
 
   simulation.on('tick', ticked);
+  function ticked() {
+    canvas1
+      .selectAll('circle')
+      .attr('cx', function(d) {
+        return d.x;
+      })
+      .attr('cy', function(d) {
+        return d.y;
+      });
+  }
 
-  scrollFunc();
   nodes.forEach(function(node) {
     canvas1
       .append('circle')
@@ -58,17 +63,6 @@ function show() {
       .attr('r', 3.5 + Math.random() * 2)
       .attr('fill', colorScale(Math.random()));
   });
-
-  function ticked() {
-    canvas1
-      .selectAll('circle')
-      .attr('cx', function(d) {
-        return d.x;
-      })
-      .attr('cy', function(d) {
-        return d.y;
-      });
-  }
 
   window.addEventListener('scroll', scrollFunc);
 
@@ -90,4 +84,6 @@ function show() {
     });
     simulation.restart();
   }
+
+  scrollFunc();
 }
